@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96579CA31702B22200B97A07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96579CA21702B22200B97A07 /* Foundation.framework */; };
+		96579CA81702B22200B97A07 /* AdStirAne.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96579CA71702B22200B97A07 /* AdStirAne.h */; };
+		96579CAA1702B22200B97A07 /* AdStirAne.m in Sources */ = {isa = PBXBuildFile; fileRef = 96579CA91702B22200B97A07 /* AdStirAne.m */; };
+		96C9007C1703E5CF008A5265 /* libAdStir.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96579CB91702B5D800B97A07 /* libAdStir.a */; };
+		96C900A11703E8DC008A5265 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C9009F1703E8DC008A5265 /* JSONKit.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		96579C9D1702B22200B97A07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				96579CA81702B22200B97A07 /* AdStirAne.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		96579C9F1702B22200B97A07 /* libAdStirAne.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAdStirAne.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		96579CA21702B22200B97A07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		96579CA61702B22200B97A07 /* AdStirAne-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdStirAne-Prefix.pch"; sourceTree = "<group>"; };
+		96579CA71702B22200B97A07 /* AdStirAne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdStirAne.h; sourceTree = "<group>"; };
+		96579CA91702B22200B97A07 /* AdStirAne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdStirAne.m; sourceTree = "<group>"; };
+		96579CB81702B5D800B97A07 /* AdstirView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdstirView.h; sourceTree = "<group>"; };
+		96579CB91702B5D800B97A07 /* libAdStir.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdStir.a; sourceTree = "<group>"; };
+		96579CBC1702B5E700B97A07 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		96579CBE1702B8AA00B97A07 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
+		96C9009D1703E8DC008A5265 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		96C9009E1703E8DC008A5265 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		96C9009F1703E8DC008A5265 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		96C900A01703E8DC008A5265 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96579C9C1702B22200B97A07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96C9007C1703E5CF008A5265 /* libAdStir.a in Frameworks */,
+				96579CA31702B22200B97A07 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96579C941702B22200B97A07 = {
+			isa = PBXGroup;
+			children = (
+				96579CB71702B5D800B97A07 /* AdStirSDK */,
+				96C9009C1703E8DC008A5265 /* JSONKit */,
+				96579CB31702B40F00B97A07 /* AIRheader */,
+				96579CA41702B22200B97A07 /* AdStirAne */,
+				96579CA11702B22200B97A07 /* Frameworks */,
+				96579CA01702B22200B97A07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96579CA01702B22200B97A07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96579C9F1702B22200B97A07 /* libAdStirAne.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96579CA11702B22200B97A07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96579CA21702B22200B97A07 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96579CA41702B22200B97A07 /* AdStirAne */ = {
+			isa = PBXGroup;
+			children = (
+				96579CA71702B22200B97A07 /* AdStirAne.h */,
+				96579CA91702B22200B97A07 /* AdStirAne.m */,
+				96579CA51702B22200B97A07 /* Supporting Files */,
+			);
+			path = AdStirAne;
+			sourceTree = "<group>";
+		};
+		96579CA51702B22200B97A07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96579CA61702B22200B97A07 /* AdStirAne-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96579CB31702B40F00B97A07 /* AIRheader */ = {
+			isa = PBXGroup;
+			children = (
+				96579CBE1702B8AA00B97A07 /* FlashRuntimeExtensions.h */,
+			);
+			path = AIRheader;
+			sourceTree = "<group>";
+		};
+		96579CB71702B5D800B97A07 /* AdStirSDK */ = {
+			isa = PBXGroup;
+			children = (
+				96579CBC1702B5E700B97A07 /* README */,
+				96579CB81702B5D800B97A07 /* AdstirView.h */,
+				96579CB91702B5D800B97A07 /* libAdStir.a */,
+			);
+			path = AdStirSDK;
+			sourceTree = "<group>";
+		};
+		96C9009C1703E8DC008A5265 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				96C9009D1703E8DC008A5265 /* CHANGELOG.md */,
+				96C9009E1703E8DC008A5265 /* JSONKit.h */,
+				96C9009F1703E8DC008A5265 /* JSONKit.m */,
+				96C900A01703E8DC008A5265 /* README.md */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96579C9E1702B22200B97A07 /* AdStirAne */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96579CAD1702B22200B97A07 /* Build configuration list for PBXNativeTarget "AdStirAne" */;
+			buildPhases = (
+				96579C9B1702B22200B97A07 /* Sources */,
+				96579C9C1702B22200B97A07 /* Frameworks */,
+				96579C9D1702B22200B97A07 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdStirAne;
+			productName = AdStirAne;
+			productReference = 96579C9F1702B22200B97A07 /* libAdStirAne.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96579C961702B22200B97A07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = United;
+			};
+			buildConfigurationList = 96579C991702B22200B97A07 /* Build configuration list for PBXProject "AdStirAne" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 96579C941702B22200B97A07;
+			productRefGroup = 96579CA01702B22200B97A07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96579C9E1702B22200B97A07 /* AdStirAne */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96579C9B1702B22200B97A07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96579CAA1702B22200B97A07 /* AdStirAne.m in Sources */,
+				96C900A11703E8DC008A5265 /* JSONKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		96579CAB1702B22200B97A07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		96579CAC1702B22200B97A07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96579CAE1702B22200B97A07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/AdStirAne.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AdStirAne/AdStirAne-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AdStirSDK\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		96579CAF1702B22200B97A07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/AdStirAne.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AdStirAne/AdStirAne-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AdStirSDK\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96579C991702B22200B97A07 /* Build configuration list for PBXProject "AdStirAne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96579CAB1702B22200B97A07 /* Debug */,
+				96579CAC1702B22200B97A07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96579CAD1702B22200B97A07 /* Build configuration list for PBXNativeTarget "AdStirAne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96579CAE1702B22200B97A07 /* Debug */,
+				96579CAF1702B22200B97A07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96579C961702B22200B97A07 /* Project object */;
+}

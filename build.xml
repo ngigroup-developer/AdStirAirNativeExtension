@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2013 UNITED, inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<project default="ane">
+
+	<property file="build.properties"/>
+
+	<target name="clean">
+		<delete dir="files" />
+	</target>
+
+	<target name="android" depends="clean">
+		<copy file="${flexsdk}/lib/android/FlashRuntimeExtensions.jar" todir="android/libs" overwrite="true"/>
+		<exec executable="ant" failonerror="true" dir="android">
+			<arg line='release'/>
+		</exec>
+		<jar destfile="files/libs/android/adstirane.jar" filesetmanifest="merge">
+			<zipgroupfileset dir="android/libs" includes="*.jar" excludes="FlashRuntimeExtensions.jar" />
+			<zipgroupfileset file="android/bin/classes.jar" />
+		</jar>
+	</target>
+
+	<target name="ios" depends="clean">
+		<copy file="${flexsdk}/include/FlashRuntimeExtensions.h" todir="ios/AIRheader" overwrite="true"/>
+		<exec executable="xcodebuild" failonerror="true" dir="ios">
+			<arg line='-project AdStirAne.xcodeproj'/>
+			<arg line='-target AdStirAne'/>
+			<arg line='-configuration Release'/>
+			<arg line='-sdk iphoneos'/>
+		</exec>
+		<copy file="ios/build/Release-iphoneos/libAdStirAne.a" tofile="files/libs/ios-iphone/libcom.ad-stir.ane.Adstir.a" overwrite="true"/>
+		<exec executable="xcodebuild" failonerror="true" dir="ios">
+			<arg line='-project AdStirAne.xcodeproj'/>
+			<arg line='-target AdStirAne'/>
+			<arg line='-configuration Release'/>
+			<arg line='-sdk iphonesimulator'/>
+		</exec>
+		<copy file="ios/build/Release-iphonesimulator/libAdStirAne.a" tofile="files/libs/ios-simulator/libcom.ad-stir.ane.Adstir.a" overwrite="true"/>
+	</target>
+
+	<target name="swc" depends="android,ios">
+		<exec executable="${flexsdk}/bin/compc${ext}" failonerror="true">
+			<arg line='-source-path as'/>
+			<arg line='-output files/Adstir.swc'/>
+			<arg line='-swf-version=13'/>
+			<arg line='-external-library-path+="${flexsdk}/frameworks/libs/air/airglobal.swc"'/>
+			<arg line='-include-classes com.ad_stir.ane.Adstir'/>
+		</exec>
+		<mkdir dir="temp"/>
+		<unzip src="files/Adstir.swc" dest="temp" overwrite="true"/>
+		<copy file="temp/library.swf" todir="files/libs/default" overwrite="true"/>
+		<copy file="temp/library.swf" todir="files/libs/android" overwrite="true"/>
+		<copy file="temp/library.swf" todir="files/libs/ios-iphone" overwrite="true"/>
+		<copy file="temp/library.swf" todir="files/libs/ios-simulator" overwrite="true"/>
+		<delete dir="temp"/>
+	</target>
+
+	<target name="ane" depends="swc">
+		<exec executable="${flexsdk}/bin/adt${ext}" failonerror="true" dir="files">
+			<arg line="-package"/>
+			<arg line="-storetype pkcs12"/>
+			<arg line="-keystore"/><arg value="${keystore.file}"/>
+			<arg line="-storepass"/><arg value="${keystore.password}"/>
+			<arg line="-target ane Adstir.ane ../extension.xml"/>
+			<arg line="-swc Adstir.swc"/>
+			<arg line="-platform default -C libs/default ."/>
+			<arg line="-platform Android-ARM -C libs/android ."/>
+			<arg line="-platform iPhone-ARM -platformoptions ../platform.xml -C libs/ios-iphone ." />
+			<arg line="-platform iPhone-x86 -platformoptions ../platform.xml -C libs/ios-simulator ." />
+		</exec>
+	</target>
+	
+</project>

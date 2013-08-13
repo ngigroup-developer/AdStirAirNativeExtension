@@ -1,0 +1,13 @@
+
+# flexsdk dir
+flexsdk = /...../
+
+# ANE certificate file
+keystore.file = /...../xxxx.p12
+keystore.password = password
+
+# ext
+ext = 
+# if windows platform  ext = .bat
+
+
