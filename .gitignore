@@ -21,6 +21,7 @@ xcuserdata
 /example/*.ipa
 /example/*.dSYM
 /example/*.swf
+/example/Main.as
 
 /build.properties
 

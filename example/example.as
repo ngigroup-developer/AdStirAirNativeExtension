@@ -24,6 +24,7 @@ package {
 	
 	public class Main extends Sprite {	
 		private var adstir:Adstir;
+		
 		public function Main() {
 			if ( loaderInfo ){
 				loaderInfo.addEventListener( Event.INIT, init, false, 0, true );
@@ -41,7 +42,7 @@ package {
 			
 			adstir = new Adstir();
 			if(adstir.isSupported){
-				adstir.media = "30542d70";
+				adstir.media = "MEDIA-XXXXX";
 				adstir.spot = 1;
 				adstir.x = 0;
 				adstir.y = 200;
