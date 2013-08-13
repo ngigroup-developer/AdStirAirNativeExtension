@@ -24,10 +24,10 @@ License
 
 Usage
 ----------------
-1. Create build.config file in top directory.
+1. Create build.properties file in top directory.
 2. Create local.properties file in android directory.
-3. Copy "AdStir Android SDK" in android/libs directory.
-4. Copy "AdStir iPhone SDK" in ios/AdStirSDK directory.
+3. Copy adstirwebview.jar in android/libs directory.
+4. Copy libAdstirWebView.a,AdstirWebView.h in ios/AdStirSDK directory.
 5. Run ant command.
 
 Example
