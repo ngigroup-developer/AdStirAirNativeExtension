@@ -38,11 +38,6 @@ package {
 			sp.x = 20;
 			sp.y = 100;
 			this.addChild(sp);
-				
-			trace("Capabilities.language");
-			trace(Capabilities.language);
-			trace("Capabilities.languages");
-			trace(Capabilities.languages);
 			
 			adstir = new Adstir();
 			if(adstir.isSupported){
