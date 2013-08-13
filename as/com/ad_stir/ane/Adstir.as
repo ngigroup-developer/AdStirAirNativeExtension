@@ -34,7 +34,7 @@ package com.ad_stir.ane
 		
 		public function show():void {
 			if (isSupported){
-				extensionContext.call("showView", media, spot, x, y);
+				extensionContext.call("showView", media, spot, interval, x, y, width, height);
 			}else{
 			}
 		}
@@ -65,6 +65,14 @@ package com.ad_stir.ane
 			_spot = no;
 		}
 		
+		private var _interval : int = 0;
+		public function get interval():int {
+			return _interval;
+		}
+		public function set interval(value:int):void {
+			_interval = value;
+		}
+		
 		private var _x : int = 0;
 		public function get x():int {
 			return _x;
@@ -73,12 +81,28 @@ package com.ad_stir.ane
 			_x = value;
 		}
 		
-		private var _y : int = 0;
+		private var _y : int = 60;
 		public function get y():int {
 			return _y;
 		}
 		public function set y(value:int):void {
 			_y = value;
+		}
+		
+		private var _width : int = 320;
+		public function get width():int {
+			return _width;
+		}
+		public function set width(value:int):void {
+			_width = value;
+		}
+		
+		private var _height : int = 50;
+		public function get height():int {
+			return _height;
+		}
+		public function set height(value:int):void {
+			_height = value;
 		}
 		
 	}

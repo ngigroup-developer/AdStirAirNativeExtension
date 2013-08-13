@@ -51,10 +51,10 @@ public class AdstirContext extends FREContext {
 			@Override
 			public FREObject call(FREContext frecontext, FREObject[] args) {
 				android.util.Log.d("com.adstir.ane.AdstirContext","showView " + args.length);
-				if (args.length == 4) {
+				if (args.length == 7) {
 					try {
 						AdstirContext context = (AdstirContext) frecontext;
-						context.show(args[0].getAsString(), args[1].getAsInt(), args[2].getAsInt(), args[3].getAsInt());
+						context.show(args[0].getAsString(), args[1].getAsInt(), args[2].getAsInt(), args[3].getAsInt(), args[4].getAsInt(), args[5].getAsInt(), args[6].getAsInt());
 					} catch (IllegalStateException e) {
 						Log.e(TAG, "", e);
 					} catch (FRETypeMismatchException e) {
@@ -87,24 +87,23 @@ public class AdstirContext extends FREContext {
 		return functionMap;
 	}
 
-	private com.ad_stir.AdstirView adstir;
+	private com.ad_stir.webview.AdstirWebView adstir;
 
-	public void show(String media, int spot, int x, int y) {
-		android.util.Log.d("com.adstir.ane.AdstirContext","show "+media+","+spot+","+x+","+y);
+	public void show(String media, int spot, int interval, int x, int y, int w, int h) {
 		this.hide();
 		Activity activity = this.getActivity();
 		if (activity != null && adstir == null) {
-			adstir = new com.ad_stir.AdstirView(this.getActivity(), media, spot);
+			float density = activity.getResources().getDisplayMetrics().density;
+			adstir = new com.ad_stir.webview.AdstirWebView(this.getActivity(), media, spot, interval);
 			android.widget.FrameLayout topVIew = (android.widget.FrameLayout) this.getActivity().findViewById(android.R.id.content);
-			android.widget.FrameLayout.LayoutParams param = new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-			param.setMargins(x, y, 0, 0);
+			android.widget.FrameLayout.LayoutParams param = new android.widget.FrameLayout.LayoutParams((int)(density * w), (int)(density * h));
+			param.setMargins((int)(density * x), (int)(density * y), 0, 0);
 			param.gravity = android.view.Gravity.NO_GRAVITY;
 			topVIew.addView(adstir, param);
 		}
 	}
 
 	public void hide() {
-		android.util.Log.d("com.adstir.ane.AdstirContext","hide");
 		if (adstir != null) {
 			ViewGroup topVIew = (ViewGroup) this.getActivity().findViewById(android.R.id.content);
 			topVIew.removeView(adstir);

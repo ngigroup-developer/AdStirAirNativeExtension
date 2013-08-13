@@ -15,45 +15,48 @@ limitations under the License.
 */
 
 #import "AdStirAne.h"
-#import "AdstirView.h"
+#import "AdstirWebView.h"
 
 FREObject AdstirAneShowView( FREContext ctx, void* funcData, uint32_t argc, FREObject arg[] ){
-	if (argc == 4) {
+	if (argc == 7) {
 		NSLog(@"AdstirAneShowView");
-
+		
 		void* adstirvoid;
 		FREGetContextNativeData(ctx,&adstirvoid);
-		AdstirView* adstir = adstirvoid;
-		[adstir stop];
+		AdstirWebView* adstir = adstirvoid;
 		[adstir removeFromSuperview];
-		adstir.rootViewController = nil;
+		[adstir release];
 		FRESetContextNativeData(ctx,nil);
 		
 		uint32_t length = 0;
-		const uint8_t* stringValue = NULL;
-		FREGetObjectAsUTF8(arg[0],&length,&stringValue);
+		const uint8_t* media = NULL;
+		FREGetObjectAsUTF8(arg[0],&length,&media);
 		
 		int32_t spot = 0;
 		FREGetObjectAsInt32(arg[1],&spot);
 		
+		int32_t time = 0;
+		FREGetObjectAsInt32(arg[2],&time);
+		
 		int32_t x = 0;
-		FREGetObjectAsInt32(arg[2],&x);
+		FREGetObjectAsInt32(arg[3],&x);
 		
 		int32_t y = 0;
-		FREGetObjectAsInt32(arg[3],&y);
+		FREGetObjectAsInt32(arg[4],&y);
 		
+		int32_t w = 0;
+		FREGetObjectAsInt32(arg[5],&w);
 		
-		AdstirView* adstir2 = [[AdstirView alloc]initWithOrigin:CGPointMake(x, y)];
-		adstir2.media = [NSString stringWithUTF8String:(const char*)stringValue];
-		adstir2.spot = spot;
+		int32_t h = 0;
+		FREGetObjectAsInt32(arg[6],&h);
+		
+		AdstirWebView* adstir2 = [[AdstirWebView alloc]initWithFrame:CGRectMake(x, y, w, h) media:[NSString stringWithUTF8String:(const char*)media] spot:[NSString stringWithFormat:@"%d",spot]];
+		adstir2.intervalTime = time;
 		UIWindow* win = [[UIApplication sharedApplication] keyWindow];
-		adstir2.rootViewController = [win rootViewController];
-		[adstir2 start];
 		
 		FRESetContextNativeData(ctx,adstir2);
 		
 		[win addSubview:adstir2];
-		
 		
 	} else {
 		NSLog(@"AdstirAneShowView arg ERROR");
@@ -67,10 +70,8 @@ FREObject AdstirAneHideView( FREContext ctx, void* funcData, uint32_t argc, FREO
 		NSLog(@"AdstirAneHideView");
 		void* adstirvoid;
 		FREGetContextNativeData(ctx,&adstirvoid);
-		AdstirView* adstir = adstirvoid;
-		[adstir stop];
+		AdstirWebView* adstir = adstirvoid;
 		[adstir removeFromSuperview];
-		adstir.rootViewController = nil;
 		[adstir release];
 		FRESetContextNativeData(ctx,nil);
 	}
@@ -102,13 +103,11 @@ void AdstirAneContextFinalizer(FREContext ctx) {
 	NSLog(@"AdstirAneContextFinalizer");
 	void* adstirvoid;
 	FREGetContextNativeData(ctx,&adstirvoid);
-	AdstirView* adstir = adstirvoid;
-	[adstir stop];
+	AdstirWebView* adstir = adstirvoid;
 	[adstir removeFromSuperview];
-	adstir.rootViewController = nil;
 	[adstir release];
 	FRESetContextNativeData(ctx,nil);
-	 return;
+	return;
 }
 
 //FREInitializer

@@ -10,8 +10,7 @@
 		96579CA31702B22200B97A07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96579CA21702B22200B97A07 /* Foundation.framework */; };
 		96579CA81702B22200B97A07 /* AdStirAne.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96579CA71702B22200B97A07 /* AdStirAne.h */; };
 		96579CAA1702B22200B97A07 /* AdStirAne.m in Sources */ = {isa = PBXBuildFile; fileRef = 96579CA91702B22200B97A07 /* AdStirAne.m */; };
-		96C9007C1703E5CF008A5265 /* libAdStir.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96579CB91702B5D800B97A07 /* libAdStir.a */; };
-		96C900A11703E8DC008A5265 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C9009F1703E8DC008A5265 /* JSONKit.m */; };
+		96C9007C1703E5CF008A5265 /* libAdstirWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96579CB91702B5D800B97A07 /* libAdstirWebView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,14 +32,10 @@
 		96579CA61702B22200B97A07 /* AdStirAne-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdStirAne-Prefix.pch"; sourceTree = "<group>"; };
 		96579CA71702B22200B97A07 /* AdStirAne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdStirAne.h; sourceTree = "<group>"; };
 		96579CA91702B22200B97A07 /* AdStirAne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdStirAne.m; sourceTree = "<group>"; };
-		96579CB81702B5D800B97A07 /* AdstirView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdstirView.h; sourceTree = "<group>"; };
-		96579CB91702B5D800B97A07 /* libAdStir.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdStir.a; sourceTree = "<group>"; };
+		96579CB81702B5D800B97A07 /* AdstirWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdstirWebView.h; sourceTree = "<group>"; };
+		96579CB91702B5D800B97A07 /* libAdstirWebView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdstirWebView.a; sourceTree = "<group>"; };
 		96579CBC1702B5E700B97A07 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		96579CBE1702B8AA00B97A07 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
-		96C9009D1703E8DC008A5265 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
-		96C9009E1703E8DC008A5265 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		96C9009F1703E8DC008A5265 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		96C900A01703E8DC008A5265 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96C9007C1703E5CF008A5265 /* libAdStir.a in Frameworks */,
+				96C9007C1703E5CF008A5265 /* libAdstirWebView.a in Frameworks */,
 				96579CA31702B22200B97A07 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				96579CB71702B5D800B97A07 /* AdStirSDK */,
-				96C9009C1703E8DC008A5265 /* JSONKit */,
 				96579CB31702B40F00B97A07 /* AIRheader */,
 				96579CA41702B22200B97A07 /* AdStirAne */,
 				96579CA11702B22200B97A07 /* Frameworks */,
@@ -114,21 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				96579CBC1702B5E700B97A07 /* README */,
-				96579CB81702B5D800B97A07 /* AdstirView.h */,
-				96579CB91702B5D800B97A07 /* libAdStir.a */,
+				96579CB81702B5D800B97A07 /* AdstirWebView.h */,
+				96579CB91702B5D800B97A07 /* libAdstirWebView.a */,
 			);
 			path = AdStirSDK;
-			sourceTree = "<group>";
-		};
-		96C9009C1703E8DC008A5265 /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				96C9009D1703E8DC008A5265 /* CHANGELOG.md */,
-				96C9009E1703E8DC008A5265 /* JSONKit.h */,
-				96C9009F1703E8DC008A5265 /* JSONKit.m */,
-				96C900A01703E8DC008A5265 /* README.md */,
-			);
-			path = JSONKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +166,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96579CAA1702B22200B97A07 /* AdStirAne.m in Sources */,
-				96C900A11703E8DC008A5265 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
