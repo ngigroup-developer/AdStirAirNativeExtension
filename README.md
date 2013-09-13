@@ -28,7 +28,19 @@ Usage
 2. Create local.properties file in android directory.
 3. Copy adstirwebview.jar in android/libs directory.
 4. Copy libAdstirWebView.a,AdstirWebView.h in ios/AdStirSDK directory.
-5. Run ant command.
+5. Run ant command file in top directory.
+
+Build Command
+----------------
+1. git clone https://github.com/ngigroup-developer/AdStirAirNativeExtension.git 
+2. cd AdStirAirNativeExtension
+3. cp build.properties.sample build.properties
+4. vi build.properties
+5. android update lib-project -p android
+6. cp /***/adstirwebview.jar android/libs/
+7. cp /***/libAdstirWebView.a ios/AdStirSDK/
+8. cp /***/AdstirWebView.h ios/AdStirSDK/
+9. ant
 
 Example
 ----------------
