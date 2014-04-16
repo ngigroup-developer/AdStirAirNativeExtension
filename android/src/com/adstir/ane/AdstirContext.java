@@ -87,16 +87,16 @@ public class AdstirContext extends FREContext {
 		return functionMap;
 	}
 
-	private com.ad_stir.webview.AdstirWebView adstir;
+	private com.ad_stir.webview.AdstirMraidView adstir;
 
 	public void show(String media, int spot, int interval, int x, int y, int w, int h) {
 		this.hide();
 		Activity activity = this.getActivity();
 		if (activity != null && adstir == null) {
 			float density = activity.getResources().getDisplayMetrics().density;
-			adstir = new com.ad_stir.webview.AdstirWebView(this.getActivity(), media, spot, interval);
+			adstir = new com.ad_stir.webview.AdstirMraidView(this.getActivity(), media, spot, new com.ad_stir.webview.AdstirMraidView.AdSize(w,h), interval);
 			android.widget.FrameLayout topVIew = (android.widget.FrameLayout) this.getActivity().findViewById(android.R.id.content);
-			android.widget.FrameLayout.LayoutParams param = new android.widget.FrameLayout.LayoutParams((int)(density * w), (int)(density * h));
+			android.widget.FrameLayout.LayoutParams param = new android.widget.FrameLayout.LayoutParams(android.widget.FrameLayout.LayoutParams.WRAP_CONTENT,android.widget.FrameLayout.LayoutParams.WRAP_CONTENT);
 			param.setMargins((int)(density * x), (int)(density * y), 0, 0);
 			param.gravity = android.view.Gravity.NO_GRAVITY;
 			topVIew.addView(adstir, param);
