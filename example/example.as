@@ -22,10 +22,10 @@ package {
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
 	
-	public class Main extends Sprite {	
+	public class example extends Sprite {	
 		private var adstir:Adstir;
 		
-		public function Main() {
+		public function example() {
 			if ( loaderInfo ){
 				loaderInfo.addEventListener( Event.INIT, init, false, 0, true );
 			}
