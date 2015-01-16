@@ -18,7 +18,7 @@ limitations under the License.
 	<sdkVersion>6.0</sdkVersion>
 	<linkerOptions>
 		<option>-ObjC</option>
-		<option>-ios_version_min 4.3</option>
+		<option>-ios_version_min 5.1.1</option>
 		<option>-framework AdSupport</option>
 		<option>-framework SystemConfiguration</option>
 		<option>-framework CoreLocation</option>

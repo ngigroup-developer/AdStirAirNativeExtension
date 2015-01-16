@@ -32,7 +32,7 @@
 		96579CA61702B22200B97A07 /* AdStirAne-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdStirAne-Prefix.pch"; sourceTree = "<group>"; };
 		96579CA71702B22200B97A07 /* AdStirAne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdStirAne.h; sourceTree = "<group>"; };
 		96579CA91702B22200B97A07 /* AdStirAne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdStirAne.m; sourceTree = "<group>"; };
-		96579CB81702B5D800B97A07 /* AdstirWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdstirWebView.h; sourceTree = "<group>"; };
+		96579CB81702B5D800B97A07 /* AdstirMraidView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdstirMraidView.h; sourceTree = "<group>"; };
 		96579CB91702B5D800B97A07 /* libAdstirWebView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdstirWebView.a; sourceTree = "<group>"; };
 		96579CBC1702B5E700B97A07 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		96579CBE1702B8AA00B97A07 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				96579CBC1702B5E700B97A07 /* README */,
-				96579CB81702B5D800B97A07 /* AdstirWebView.h */,
+				96579CB81702B5D800B97A07 /* AdstirMraidView.h */,
 				96579CB91702B5D800B97A07 /* libAdstirWebView.a */,
 			);
 			path = AdStirSDK;
@@ -193,7 +193,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -212,6 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

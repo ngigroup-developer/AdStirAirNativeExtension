@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 #import "AdStirAne.h"
-#import "AdstirWebView.h"
+#import "AdstirMraidView.h"
 
 FREObject AdstirAneShowView( FREContext ctx, void* funcData, uint32_t argc, FREObject arg[] ){
 	if (argc == 7) {
@@ -23,7 +23,7 @@ FREObject AdstirAneShowView( FREContext ctx, void* funcData, uint32_t argc, FREO
 		
 		void* adstirvoid;
 		FREGetContextNativeData(ctx,&adstirvoid);
-		AdstirWebView* adstir = adstirvoid;
+		AdstirMraidView* adstir = adstirvoid;
 		[adstir removeFromSuperview];
 		[adstir release];
 		FRESetContextNativeData(ctx,nil);
@@ -50,7 +50,13 @@ FREObject AdstirAneShowView( FREContext ctx, void* funcData, uint32_t argc, FREO
 		int32_t h = 0;
 		FREGetObjectAsInt32(arg[6],&h);
 		
-		AdstirWebView* adstir2 = [[AdstirWebView alloc]initWithFrame:CGRectMake(x, y, w, h) media:[NSString stringWithUTF8String:(const char*)media] spot:[NSString stringWithFormat:@"%d",spot]];
+        AdstirAdSize adsize = AdstirSizeFromCGSize(CGSizeMake(w,h));
+        if( w == 320 && h == 50 )adsize = kAdstirAdSize320x50;
+        if( w == 320 && h == 100 )adsize = kAdstirAdSize320x100;
+        if( w == 300 && h == 250 )adsize = kAdstirAdSize300x250;
+        if( w == 300 && h == 100 )adsize = kAdstirAdSize300x100;
+        
+        AdstirMraidView* adstir2 = [[AdstirMraidView alloc]initWithAdSize:adsize origin:CGPointMake(x, y) media:[NSString stringWithUTF8String:(const char*)media] spot:spot];
 		adstir2.intervalTime = time;
 		UIWindow* win = [[UIApplication sharedApplication] keyWindow];
 		
@@ -70,7 +76,7 @@ FREObject AdstirAneHideView( FREContext ctx, void* funcData, uint32_t argc, FREO
 		NSLog(@"AdstirAneHideView");
 		void* adstirvoid;
 		FREGetContextNativeData(ctx,&adstirvoid);
-		AdstirWebView* adstir = adstirvoid;
+		AdstirMraidView* adstir = adstirvoid;
 		[adstir removeFromSuperview];
 		[adstir release];
 		FRESetContextNativeData(ctx,nil);
@@ -103,7 +109,7 @@ void AdstirAneContextFinalizer(FREContext ctx) {
 	NSLog(@"AdstirAneContextFinalizer");
 	void* adstirvoid;
 	FREGetContextNativeData(ctx,&adstirvoid);
-	AdstirWebView* adstir = adstirvoid;
+	AdstirMraidView* adstir = adstirvoid;
 	[adstir removeFromSuperview];
 	[adstir release];
 	FRESetContextNativeData(ctx,nil);
